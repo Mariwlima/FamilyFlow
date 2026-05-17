@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow mt-5">
+            <div class="card-body p-4">
+                <h2 class="text-center mb-4">🏠 Register on FamilyFlow</h2>
+                <form action="/register" method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Family Name</label>
+                        <input type="text" class="form-control" name="name" placeholder="Ex: The Smiths" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" name="confirmation" placeholder="Confirm password" required>
+                    </div>
+
+                    <h5 class="mt-4">Family Members</h5>
+                    <div id="members">
+                        <div class="row mb-2">
+                            <div class="col-7">
+                                <input type="text" class="form-control" name="members" placeholder="Member name" required>
+                            </div>
+                            <div class="col-5">
+                                <select class="form-select" name="roles">
+                                    <option value="adult">Adult</option>
+                                    <option value="child">Child</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-7">
+                                <input type="text" class="form-control" name="members" placeholder="Member name" required>
+                            </div>
+                            <div class="col-5">
+                                <select class="form-select" name="roles">
+                                    <option value="adult">Adult</option>
+                                    <option value="child">Child</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-7">
+                                <input type="text" class="form-control" name="members" placeholder="Member name">
+                            </div>
+                            <div class="col-5">
+                                <select class="form-select" name="roles">
+                                    <option value="adult">Adult</option>
+                                    <option value="child">Child</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 mt-3">Register Family</button>
+                </form>
+                <hr>
+                <p class="text-center">Already registered? <a href="/login">Login here</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

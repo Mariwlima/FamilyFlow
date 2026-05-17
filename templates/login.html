@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card shadow mt-5">
+            <div class="card-body p-4">
+                <h2 class="text-center mb-4">🏠 FamilyFlow</h2>
+                <form action="/login" method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Family Name</label>
+                        <input type="text" class="form-control" name="name" placeholder="Your family name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Who are you?</label>
+                        <input type="text" class="form-control" name="member_name" placeholder="Your name" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                </form>
+                <hr>
+                <p class="text-center">New family? <a href="/register">Register here</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

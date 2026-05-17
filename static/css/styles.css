@@ -1,0 +1,70 @@
+/* Geral */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Cards */
+.card {
+    border-radius: 12px;
+    border: none;
+}
+
+.card-header {
+    border-radius: 12px 12px 0 0 !important;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* Área da criança */
+.child-area {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.child-event {
+    background-color: #FFE5E5;
+    border-left: 4px solid #FF6B6B;
+}
+
+.child-task {
+    background-color: #E5F9F6;
+    border-left: 4px solid #4ECDC4;
+}
+
+/* Botões */
+.btn {
+    border-radius: 8px;
+}
+
+/* Lista de tarefas */
+.list-group-item {
+    border-left: none;
+    border-right: none;
+}
+
+.list-group-item:first-child {
+    border-top: none;
+}
+
+/* Calendário */
+#calendar {
+    max-width: 100%;
+}
+
+.fc-toolbar-title {
+    font-size: 1.2rem !important;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 1rem;
+    }
+}
