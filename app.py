@@ -11,7 +11,12 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 db = SQL("sqlite:///family.db")
-
+with app.app_context():
+    db.execute("""CREATE TABLE IF NOT EXISTS families (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL UNIQUE, password TEXT NOT NULL)""")
+    db.execute("""CREATE TABLE IF NOT EXISTS members (id INTEGER PRIMARY KEY AUTOINCREMENT, family_id INTEGER NOT NULL, name TEXT NOT NULL, role TEXT NOT NULL DEFAULT 'adult', color TEXT DEFAULT '#4A90D9')""")
+    db.execute("""CREATE TABLE IF NOT EXISTS events (id INTEGER PRIMARY KEY AUTOINCREMENT, family_id INTEGER NOT NULL, member_id INTEGER NOT NULL, title TEXT NOT NULL, date TEXT NOT NULL, time TEXT)""")
+    db.execute("""CREATE TABLE IF NOT EXISTS tasks (id INTEGER PRIMARY KEY AUTOINCREMENT, family_id INTEGER NOT NULL, member_id INTEGER NOT NULL, title TEXT NOT NULL, due_date TEXT, done INTEGER NOT NULL DEFAULT 0)""")
+    db.execute("""CREATE TABLE IF NOT EXISTS shopping (id INTEGER PRIMARY KEY AUTOINCREMENT, family_id INTEGER NOT NULL, item TEXT NOT NULL, done INTEGER NOT NULL DEFAULT 0)""")
 @app.after_request
 def after_request(response):
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
