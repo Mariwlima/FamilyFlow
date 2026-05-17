@@ -53,9 +53,5 @@ Flask was chosen because it was taught throughout CS50 and is perfect for small 
 
 This project was a true challenge from start to finish, and that is exactly what made it so rewarding to complete.
 
-## How to Run
 
-1. Install dependencies: `pip install flask flask-session cs50`
-2. Initialize database: `python init_db.py`
-3. Run the app: `flask run`
-4. Open `http://127.0.0.1:5000` in your browser
+#### Live Demo: https://familyflow-ib6n.onrender.com
